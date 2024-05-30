@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: white;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px black;
+}
+.left_side{
+    position: relative;
+    background-color: #181d52;
+    padding: 40px;
+}
+.profileText{
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-bottom: 20px;
+border-bottom: 1px solid grey;
+}
+
+.profileText .image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid grey;
+}
+
+.profileText .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileText h2{
+    color: #ffff;
+    font-size: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+.profileText h2 span {
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.contactInfo {
+padding-top: 40px;
+}
+
+.contactInfo .title {
+    font-weight: 600;
+    color: #ffffff; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contactInfo ul {
+    position: relative;
+}
+
+.contactInfo ul li {
+    list-style: none;
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.contactInfo ul li i {
+    font-size: 24px;
+    display: inline-block;
+    width: 30px;
+    color: #15fa00; 
+    font-size: 20px;
+}
+
+.contactInfo ul li a {
+    color: #007ced;
+    text-decoration: none;
+}
+.contactInfo ul li span{
+    color: #ffff;
+}
+
+.personaldetails {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.personaldetails .title {
+    text-align: center;
+    color: #007ced;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.personaldetails ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.personaldetails ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.personaldetails ul li i {
+    color: #15fa00;
+    font-size: 18px;
+    width: 30px;
+    text-align: center;
+}
+
+.personaldetails ul li span {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.personaldetails ul li a {
+    color: #007ced;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+
+.right-side{
+    position: relative;
+    background-color: #ffffff;
+    padding: 40px;
+}

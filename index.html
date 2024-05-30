@@ -23,9 +23,11 @@
                 </div>
                 <ul class="navlinks">
                     <li><a href="">Home</a></li>
-                    <li><a href="">portifolio</a></li>
-                    <li><a href="">Resume</a></li>
-                    <li><a href="">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">skills</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -35,9 +37,9 @@
                 <img src="image.jpg" alt="profile pic">
             </div>
             <div class="hero-text">
-                <h5>Hi I'm <span class="">Frontend Developer</span></h5>
-                <h1>BrianPaul Gitonga</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quaerat.</p>
+                <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                <h1 style="color:#007ced ;">BrianPaul<span style="color: #15fa00;">Gitonga</span></h1>
+                <p>I specialize in creating responsive, user-friendly web interfaces using modern technologies. Let's collaborate to bring your ideas to life.</p>
                 <div class="btn-group">
                     <a href="" class="btn ">Hire Me</a>
                     <a href="" class="btn active">Download CV</a>
@@ -47,6 +49,7 @@
                     <a href=""><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
                     <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/+254704234834" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href=""><i class="fab fa-linkedin-in"></i></a>
                     <a href=""><i class="fab fa-github"></i></a>
                 </div>
@@ -54,5 +57,25 @@
         </div>
     </div>
    </div> 
+   <!--typed js for typing effect-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+   <script>
+    /**creating button click show hide navbar **/
+    var togglebtn = document.querySelector(".togglebtn");
+    var nav=document.querySelector(".navlinks");
+    var links=document.querySelector(".navlinks li");
+
+    togglebtn.addEventListener("click", function() {
+        this.classList.toggle("click");
+        nav.classList.toggle("open");
+    })
+
+    var typed=new Typed(".input",{
+        strings:["Frontend Developer","Web Developer","Web Designer","Photographer","Graphic Designer"],
+        typedSpeed:70,
+        backSpeed:55,
+        loop:true
+    })
+   </script>
 </body>
 </html>

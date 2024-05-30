@@ -92,7 +92,7 @@ nav .navlinks li a{
     border-radius: 50%;
     overflow: hidden;
     border: 15px solid #4444;
-    box-shadow: 5px 7px 25px rgb(123, 255, 0);
+    box-shadow: 5px 7px 25px #15fa00;
 }
 
 .hero-pic img{
@@ -114,15 +114,20 @@ nav .navlinks li a{
     font-size: 14px;
 }
 .hero-text h5 span{
-    color: #007ced;
+    color: #15fa00;
     font-size: 16px;
+    font-family: cursive;
 }
 .hero-text h1{
     color: #007ced;
     font-size: 3rem;
+    font-weight: 700;
+    font-family: sans-serif;
 }
 .hero-text p {
-    color: #e5e5e5;
+    color: rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
 
 }
 .btn-group{
@@ -137,16 +142,25 @@ nav .navlinks li a{
     margin-right: 7px;
     border-radius: 30px;
     border: 2px solid #d5d5d5;
-    box-shadow: 0 10px 10px -8px rgb(123, 255, 0);
+    box-shadow: 0 10px 10px -8px #15fa00;
 }
 .btn.active {
     border-color: #007ced;
 }
-.hero-text .social i{
+.social i{
     color: #e5e5e5;
     font-size: 18px;
-    margin-right: 20px;
+    margin-right: 10px;
+    transition: 0.5s;
+    
 }
+
+ .social i:hover{
+    color: #007ced;
+    transform: rotate(360deg);
+    
+}
+
 /* disign and display navbar for small screen */
 @media(max-width:930px)
 {
@@ -175,7 +189,7 @@ nav .navlinks li a{
     nav .navlinks{
         position: absolute;
         top: 110px;
-        right: 0;
+        right: -100%;
         bottom: 0;
         width: 60%;
         height: 100vh;
@@ -207,3 +221,5 @@ nav .navlinks li a{
         padding: 40px 0px;
     }
 }
+
+

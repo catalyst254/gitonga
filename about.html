@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BrianPaul Gitonga</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+   <div class="hero-header">
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <div class="logo-text">Brian Paul</div>
+            </div>
+            <nav>
+                <div class="togglebtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>Hi, <strong>I'm BrianPaul Gitonga.</strong></p>
+            <p>Welcome to my corner of the internet! I'm grateful to have you here 🙏</p>
+            <div class="container">
+                <div class="card">
+                    <h3>Who Am I?</h3>
+                    <p>I'm Brian Paul Gitonga, a passionate individual with a diverse set of skills and interests.</p>
+                </div>
+                <div class="card">
+                    <h3>My Journey</h3>
+                    <p>My journey began [] years ago when I first delved into the world of programming and design. Since then, I've been on a continuous path of learning and growth, honing my skills and exploring new opportunities.</p>
+                </div>
+                <div class="card">
+                    <h3>What I Do</h3>
+                    <p>I specialize in web development, programming, graphic design, and photography. I'm deeply committed to delivering high-quality work that meets the needs of my clients and exceeds their expectations.</p>
+                </div>
+                <div class="card">
+                    <h3>Why I Do It</h3>
+                    <p>What drives me in my work is the opportunity to bring ideas to life and make a meaningful impact. I believe in the power of creativity and technology to transform businesses and enhance experiences.</p>
+                </div>
+                <div class="card">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out to me via email at <a href="mailto:munyuaanthony6@gmail.com?subject=Feedback%20Request&body=Hello%20there,">munyuaanthony6@gmail.com</a> or connect with me on social media.</p>
+                    <div class="social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+254704234834" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+   </div> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+   <script>
+    var togglebtn = document.querySelector(".togglebtn");
+    var nav=document.querySelector(".navlinks");
+
+    togglebtn.addEventListener("click", function() {
+        this.classList.toggle("click");
+        nav.classList.toggle("open");
+    })
+   </script>
+</body>
+</html>
