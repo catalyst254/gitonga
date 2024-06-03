@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - BrianPaul Gitonga</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+    <header>
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <div class="logo-text">Brian Paul</div>
+        </div>
+        <nav>
+            <div class="togglebtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navlinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href=""></a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="skills.html">skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul> 
+        </nav>
+    </header>
+        <section class="services">
+            <h2>My Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>I create responsive and user-friendly websites using the latest technologies. From simple static websites to complex web applications, I ensure a seamless user experience.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Graphic Design</h3>
+                    <p>Creative graphic design solutions for branding, marketing, and more. Whether you need a logo, business cards, or marketing materials, I can bring your ideas to life with stunning visuals.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Professional photography services for various occasions. From corporate events to personal portraits, I capture moments with precision and creativity, ensuring lasting memories.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your website's visibility on search engines with tailored SEO strategies. By optimizing your website's content and structure, I can help drive organic traffic and increase your online presence.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav=document.querySelector(".navlinks");
+    
+        togglebtn.addEventListener("click", function() {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+       </script>
+</body>
+</html>

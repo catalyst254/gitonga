@@ -1,0 +1,322 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.hero-header{
+width: 100%;
+height: 100%;
+min-height: 100vh;
+background: #222;
+}
+.wrapper{
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: o 20px;
+}
+header{
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo i{
+    height: 45px;
+    width: 45px;
+    background-color: #007ced;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+nav .togglebtn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+nav .togglebtn span{
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+}
+nav .navlinks{
+    list-style-type: none;
+}
+nav .navlinks li{
+    display: inline-block;
+}
+nav .navlinks li a {
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+nav .navlinks li a:hover {
+    color: #15fa00;
+    border-bottom: 1.5px solid #15fa00;
+    
+}
+
+
+/* disign and display navbar for small screen */
+@media(max-width:930px)
+{
+    nav .togglebtn{
+        display: initial;
+    }
+    /* for toggle button*/
+    .click {
+        top: 45px;
+    }
+    .click span{
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child {
+        transform: rotate(-45deg);
+    }
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .navlinks{
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 30%;
+        height: 50%;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px black;
+        transition: 0.5s;
+        padding: 25px 0px;
+        border: 2px solid #15fa00;
+        border-radius: 10px;
+    }
+    nav .navlinks li{
+        display: block;
+    }
+    nav .navlinks li a{
+        display: block;
+        margin-bottom: 15px;
+        text-align: left;
+        margin-left: 10px;
+    }
+    nav .navlinks.open{
+        right: 0;
+    }
+}
+@media (max-width: 768px)
+{
+    .container{
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .hero-text{
+        padding: 40px 0px;
+    }
+}
+
+
+
+
+.my{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #007ced;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+}
+.containers{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px;
+    justify-content:space-around;
+   flex-direction: row;
+}
+
+.container {
+    margin: 20px;
+    padding: 40px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: -3px -3px 20px #007ced;
+    width: 500px;
+}
+.containers.container :hover{
+    box-shadow: -3px -3px 20px #15fa00;
+    
+}
+
+.skill {
+    margin-bottom: 2px;
+}
+
+.skill-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.skill-level {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    color: #ddd;
+}
+
+.skill-level-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #ddd;
+    box-shadow: 1px 1px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.skill-level-fill {
+    height: 100%;
+    background-color: #1dfc00;
+    border-radius: 5px;
+    animation: fillWidth 1s ease forwards;
+}
+h2 {
+    color: #007ced;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    animation: fadein 1s ease-in-out;
+    animation-delay: 1s;
+    box-shadow: 1px 1px 10px #15fa00;
+    border-radius: 1000px;
+    width: 60% auto;  
+}
+.education {
+    padding: 50px 15px;
+    background-color: #222;
+}
+
+
+
+.timelines-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timeline-item {
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: relative;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: -2px 4px 8px black;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: -2px -2px 46px #007ced;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+.timeline-content {
+    padding: 20px;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff6f6;
+}
+
+.timeline-content p {
+    color: #ffffff;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+h4{
+    color: white;
+    margin-bottom: 2px;
+    color: #1dfc00;
+    text-decoration: underline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@media (max-width: 768px) {
+    .timeline-item {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
