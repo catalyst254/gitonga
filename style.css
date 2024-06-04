@@ -174,16 +174,18 @@ nav .navlinks li a:hover {
 }
 
 /* disign and display navbar for small screen */
-@media(max-width:930px)
-{
-    nav .togglebtn{
+@media (max-width: 930px) {
+    nav .togglebtn {
         display: initial;
+        right: 5%;
     }
-    /* for toggle button*/
+
+    /* for toggle button */
     .click {
-        top: 45px;
+        top: 50%;
+        transform: translateY(-50%);
     }
-    .click span{
+    .click span {
         position: absolute;
         margin-top: 12px;
     }
@@ -194,14 +196,15 @@ nav .navlinks li a:hover {
         opacity: 0;
         margin: 0;
     }
-    .click span:last-child{
+    .click span:last-child {
         transform: rotate(45deg);
         top: 0;
     }
-    nav .navlinks{
+
+    nav .navlinks {
         position: absolute;
         top: 110px;
-        right: -100%;
+        right: -100vw;
         bottom: 0;
         width: 30%;
         height: 50%;
@@ -209,21 +212,20 @@ nav .navlinks li a:hover {
         z-index: 3;
         box-shadow: 5px 13px 30px black;
         transition: 0.5s;
-        padding: 25px 0px;
+        padding: 25px 20px;
         border: 2px solid #15fa00;
         border-radius: 10px;
     }
-    nav .navlinks li{
+    nav .navlinks li {
         display: block;
     }
-    nav .navlinks li a{
+    nav .navlinks li a {
         display: block;
         margin-bottom: 15px;
         text-align: left;
-        margin-left: 10px;
     }
-    nav .navlinks.open{
-        right: 0;
+    nav .navlinks.open {
+        right: 5%;
     }
 }
 @media (max-width: 768px)
