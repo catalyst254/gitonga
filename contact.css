@@ -37,12 +37,14 @@ p{
 }
 
 .contact-info, .contact-form {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px black;
-    width: 45%;
-    margin: 10px;
+    background: #222; 
+    border-radius: 10px;
+    box-shadow: -2px -2px 18px black;
+    margin: 20px;
+    padding: 40px 30px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
 }
 .contact-info, .contact-form :hover{
     
