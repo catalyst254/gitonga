@@ -53,7 +53,7 @@ header{
     font-size: 24px;
     font-weight: bold; 
     text-transform: uppercase; 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 nav .togglebtn{
     width: 35px;
@@ -76,7 +76,6 @@ nav .togglebtn span{
 }
 nav .navlinks{
     list-style-type: none;
-    overflow-y: auto;
 }
 nav .navlinks li{
     display: inline-block;
@@ -96,10 +95,6 @@ nav .navlinks li a:hover {
     
 }
 
-nav .navlinks.open {
-    right: 5%;
-    overflow-y: hidden;
-}
 
 .container{
     display: flex;
@@ -254,7 +249,13 @@ nav .navlinks.open {
     .hero-text{
         padding: 40px 0px;
     }
-    
+    .navlinks.open {
+        display: block;
+    }
+    .navlinks {
+        display: none;
+    }
+
 }
 
 

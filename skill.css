@@ -73,7 +73,6 @@ nav .togglebtn span{
 }
 nav .navlinks{
     list-style-type: none;
-    overflow-y: auto;
 }
 nav .navlinks li{
     display: inline-block;
@@ -92,10 +91,7 @@ nav .navlinks li a:hover {
     border-bottom: 1.5px solid #15fa00;
     
 }
-nav .navlinks.open {
-    right: 5%;
-    overflow-y: hidden;
-}
+
 
 /* disign and display navbar for small screen */
 @media(max-width:930px)
@@ -158,6 +154,12 @@ nav .navlinks.open {
     }
     .hero-text{
         padding: 40px 0px;
+    }
+    .navlinks.open {
+        display: block;
+    }
+    .navlinks {
+        display: none;
     }
 }
 
