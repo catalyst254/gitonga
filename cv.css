@@ -1,52 +1,56 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-color: lightblue;
+body {
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-.container{
+
+.container {
     position: relative;
     width: 100%;
     max-width: 1000px;
     min-height: 1000px;
-    background-color: white;
+    background-color: #fff;
     margin: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    box-shadow: 0 35px 55px black;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
 }
-.left_side{
+
+.left_side {
     position: relative;
-    background-color: #181d52;
+    background-color: #003147;
     padding: 40px;
 }
-.profileText{
+
+.profileText {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .profileText .image {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid grey;
 }
 
-.profileText .image img{
+.profileText .image img {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,9 +59,9 @@ body{
     object-fit: cover;
 }
 
-.profileText h2{
-    color: #ffff;
-    font-size: 15px;
+.profileText h2 {
+    color: #fff;
+    font-size: 1.5em;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -69,15 +73,17 @@ body{
     font-size: 0.8em;
     font-weight: 300;
 }
+
 .contactInfo {
-padding-top: 40px;
+    padding-top: 40px;
 }
 
-.contactInfo .title {
+.title {
+    color: #fff;
+    text-transform: uppercase;
     font-weight: 600;
-    color: #ffffff; 
+    letter-spacing: 1px;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .contactInfo ul {
@@ -85,79 +91,59 @@ padding-top: 40px;
 }
 
 .contactInfo ul li {
-    list-style: none;
     position: relative;
+    list-style: none;
     margin: 10px 0;
     cursor: pointer;
 }
 
-.contactInfo ul li i {
-    font-size: 24px;
+.contactInfo ul li .icon {
     display: inline-block;
     width: 30px;
-    color: #15fa00; 
-    font-size: 20px;
+    font-size: 18px;
+    color: #1c3642;
+}
+
+.contactInfo ul li span {
+    color: #fff;
+    font-weight: 300;
 }
 
 .contactInfo ul li a {
-    color: #007ced;
+    color: #fff;
     text-decoration: none;
-}
-.contactInfo ul li span{
-    color: #ffff;
 }
 
 .personaldetails {
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.personaldetails .title {
-    text-align: center;
-    color: #007ced;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.personaldetails ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding-top: 40px;
 }
 
 .personaldetails ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
 }
 
-.personaldetails ul li i {
-    color: #15fa00;
-    font-size: 18px;
+ul li i {
+    display: inline-block;
     width: 30px;
-    text-align: center;
+    font-size: 15px;
+    color: #03a9f4;
 }
 
 .personaldetails ul li span {
-    font-size: 16px;
-    color: #ffffff;
+    color: #fff;
+    font-weight: 300;
 }
 
 .personaldetails ul li a {
-    color: #007ced;
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
 }
 
-
-
-
-.right-side{
+.right_side {
     position: relative;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 40px;
 }
