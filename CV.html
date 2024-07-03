@@ -6,23 +6,25 @@
     <title>BrianPaul Gitonga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="styl.css">
 </head>
-<body>
-   <div class="container">
+
+    <body>
+   <div class="contain">
     <div class="left_side">
+      <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
         <div class="profileText">
             <div class="image">
                 <img src="image.jpg" alt="profile">
             </div>
-            <h2>BrianPaul Gitonga <br><span>Web Developer</span></h2>
+            <h2>BrianPaul Gitonga <br><span id="jobTitle" class="typing"></span></h2>
         </div>
         <div class="contactInfo">
             <h3 class="title">Contact Info</h3>
             <ul>
-                <li><i class="fas fa-phone"></i><span>+254 110848885</span></li>
-                <li><i class="fas fa-envelope"></i><span>  <a href="mailto: brianpaulgito@gmail.com ">brianpaulgito@gmail.com</a></span></li>
-                <li><i class="fab fa-github"></i><span>  <a href="https://github.com/catalyst254">  github.com/catalyst</a></span></li>
-                
+              <li><i class="fas fa-phone"></i><span><a href="tel:+254110848885">+254 110848885</a></span></li>
+                <li><i class="fas fa-envelope"></i><span><a href="mailto:brianpaulgito@gmail.com">brianpaulgito@gmail.com</a></span></li>
+                <li><i class="fab fa-github"></i><span><a href="https://github.com/catalyst254">github.com/catalyst254</a></span></li>
             </ul>
         </div>
         <div class="personaldetails">
@@ -34,11 +36,104 @@
                 <li><i class="fas fa-envelope"></i><span>Email: <a href="mailto:brianpaulgito@gmail.com">brianpaulgito@gmail.com</a></span></li>
             </ul>
         </div>
+        <div class="skills">
+            <h3 class="title">Skills</h3>
+            <ul>
+                <li><span>HTML</span><div class="percent"><div style="width: 90%;"></div></div></li>
+                <li><span>CSS</span><div class="percent"><div style="width: 85%;"></div></div></li>
+                <li><span>JavaScript</span><div class="percent"><div style="width: 75%;"></div></div></li>
+                <li><span>Python</span><div class="percent"><div style="width: 70%;"></div></div></li>
+            </ul>
+        </div>
     </div>
+    <div class="right_side">
+        <div class="about">
+            <h2 class="title2">Profile</h2>
+            <p>A passionate and creative web developer with a keen eye for design and a strong foundation in front-end technologies. Eager to contribute to innovative projects and continuously expand my skill set in the ever-evolving world of web development.</p>
+        </div>
+        <div class="education">
+            <h2 class="title2">Education</h2>
+            <div class="box">
+                <div class="year_company">
+                    <h5>2022 - Present</h5>
+                    <h5>Mama Ngina University</h5>
+                </div>
+                <div class="text">
+                    <h4>Bachelor's Degree in Mathematics and Computer Science</h4>
+                    <p>Currently pursuing a degree with a focus on web technologies and software development.</p>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <h2 class="title2">Experience</h2>
+            <div class="box">
+                <div class="year_company">
+                    <h5>2023 - Present</h5>
+                    <h5>Company Name</h5>
+                </div>
+                <div class="text">
+                    <h4>Kenya Web Developer</h4>
+                    <p>Developed and maintained responsive websites, collaborated with design teams, and implemented new features using modern web technologies.</p>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <h2 class="title2">Projects</h2>
+            <ul>
+                <li>Personal Portfolio Website</li>
+                <li>E-commerce Platform (in progress)</li>
+                <li>Weather App using API integration</li>
+            </ul>
+        </div>
+    </div>
+   </div>
+   
+   <script>
+    const jobTitles = [
+      "Frontend Developer","Web Developer","Web Designer","Photographer","Graphic Designer"
+    ];
     
-
-
-    <div class="right_side"></div>
-   </div> 
+    const typingSpeed = 100; // milliseconds per character
+    const deleteSpeed = 50;  // milliseconds per character
+    const pauseDuration = 1000; // milliseconds to pause between typing and deleting
+    
+    function typeWriter(text, i, fnCallback) {
+      if (i < text.length) {
+        document.getElementById("jobTitle").innerHTML = text.substring(0, i+1);
+        setTimeout(function() {
+          typeWriter(text, i + 1, fnCallback)
+        }, typingSpeed);
+      } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, pauseDuration);
+      }
+    }
+    
+    function deleteWriter(text, i, fnCallback) {
+      if (i > 0) {
+        document.getElementById("jobTitle").innerHTML = text.substring(0, i-1);
+        setTimeout(function() {
+          deleteWriter(text, i - 1, fnCallback)
+        }, deleteSpeed);
+      } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, pauseDuration);
+      }
+    }
+    
+    function startTyping(i) {
+      if (typeof jobTitles[i] == 'undefined') {
+        setTimeout(function() {
+          startTyping(0);
+        }, pauseDuration);
+      } else {
+        typeWriter(jobTitles[i], 0, function() {
+          deleteWriter(jobTitles[i], jobTitles[i].length, function() {
+            startTyping(i + 1);
+          });
+        });
+      }
+    }
+    
+    startTyping(0);
+    </script>
 </body>
 </html>

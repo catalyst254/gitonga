@@ -26,6 +26,10 @@ header{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: ;
+    z-index: 999;
+    width: 100%;
+    top: 0;
 }
 
 .logo{
@@ -105,6 +109,7 @@ nav .navlinks li a:hover {
 .container .hero-pic{
     width: 300px;
     height: 300px;
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
     border: 15px solid #4444;
@@ -264,6 +269,7 @@ nav .navlinks li a:hover {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    margin-top: -100px;
     flex-wrap: wrap;
     background: #222;
   }
@@ -271,7 +277,7 @@ nav .navlinks li a:hover {
   .intro-card {
     background: transparent;
     border-radius: 10px;
-    margin: 10px;
+    margin-top: 100px;
     padding: 40px 30px;
     max-width: 350px;
     text-align: center;
@@ -287,7 +293,7 @@ nav .navlinks li a:hover {
   
   .intro-icon {
     font-size: 50px;
-    color: #007ced;
+    color: #15fa00;
     margin-bottom: 20px;
   }
   
@@ -348,3 +354,39 @@ nav .navlinks li a:hover {
       flex-direction: column; 
     }
   }
+  .whatsapp-icon {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #25d366;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Ensure the icon doesn't overlap with content on smaller screens */
+@media screen and (max-width: 768px) {
+    .whatsapp-icon {
+        left: 10px;
+        bottom: 10px;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+}
+  

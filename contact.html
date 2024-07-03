@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
+    <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <div class="hero-header">
         <div class="wrapper">
             <header>
@@ -85,6 +88,33 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('statusMessage').textContent = data;
+                document.getElementById('contactForm').reset();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                document.getElementById('statusMessage').textContent = 'An error occurred. Please try again.';
+            });
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
         var togglebtn = document.querySelector(".togglebtn");

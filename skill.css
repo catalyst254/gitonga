@@ -319,3 +319,38 @@ h4{
         max-width: 100%;
     }
 }
+.whatsapp-icon {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #25d366;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Ensure the icon doesn't overlap with content on smaller screens */
+@media screen and (max-width: 768px) {
+    .whatsapp-icon {
+        left: 10px;
+        bottom: 10px;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+}

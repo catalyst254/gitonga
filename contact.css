@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 
@@ -119,7 +120,9 @@ p{
     font-size: 0.9rem;
 }
 
-#message{
+#message ,#email, #name{
     color: #d3d3d3;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
 }
 

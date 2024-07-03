@@ -4,9 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brianpaul Gitonga | Portfolio</title> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+<style>
+    /* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Default light mode background */
+    transition: background-color 0.3s ease;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+.hero-header {
+    background-color: #007ced; /* Default header background color */
+    color: #fff; /* Default header text color */
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.navlinks {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navlinks li {
+    margin-left: 20px;
+}
+
+.navlinks li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navlinks li a:hover {
+    text-decoration: underline;
+}
+
+/* Main container styles */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.hero-pic img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007ced;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.btn.active {
+    background-color: #15fa00; /* Active button background color */
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-color: #15fa00; /* Hover button background color */
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.social a:hover {
+    color: #15fa00; /* Social media icon hover color */
+}
+
+/* Intro section styles */
+.intro-section {
+    background-color: #f0f0f0; /* Default intro section background color */
+    padding: 40px 0;
+}
+
+.intro-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.intro-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-content h2 {
+    color: #007ced;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.intro-content p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.learn-more {
+    color: #007ced;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode styles */
+
+body.dark-mode {
+    background-color: #222; /* Dark mode background */
+    color: #fff; /* Dark mode text color */
+}
+.whatsapp-icon {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Ensure the icon doesn't overlap with content on smaller screens */
+@media screen and (max-width: 768px) {
+    .whatsapp-icon {
+        left: 10px;
+        bottom: 10px;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+</style>
 <body>
     <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
@@ -92,26 +288,39 @@
     </div>
 </div>
 
-   <!--typed js for typing effect-->
+   <!-- Dark Mode Toggle -->
+   <div class="mode-toggle">
+       <label class="switch">
+           <input type="checkbox" id="darkModeToggle">
+           <span class="slider round"></span>
+       </label>
+       <span class="mode-label">Dark Mode</span>
+   </div>
+
+   <!-- Typed.js for typing effect -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
    <script>
-    /**creating button click show hide navbar **/
-    var togglebtn = document.querySelector(".togglebtn");
-    var nav=document.querySelector(".navlinks");
-    var links=document.querySelector(".navlinks li");
+    // Toggle dark mode
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
-    togglebtn.addEventListener("click", function() {
-        this.classList.toggle("click");
-        nav.classList.toggle("open");
-    })
+    darkModeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
 
-    var typed=new Typed(".input",{
-        strings:["Frontend Developer","Web Developer","Web Designer","Photographer","Graphic Designer"],
-        typedSpeed:70,
-        backSpeed:55,
-        loop:true
-    })
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+    }
+
+    // Typed.js initialization
+    var typed = new Typed(".input", {
+        strings: ["Frontend Developer", "Web Developer", "Web Designer", "Photographer", "Graphic Designer"],
+        typeSpeed: 70,
+        backSpeed: 55,
+        loop: true
+    });
    </script>
-   
 </body>
 </html>
