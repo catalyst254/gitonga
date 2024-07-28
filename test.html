@@ -3,223 +3,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brianpaul Gitonga | Portfolio</title> 
+    <meta name="description" content="Brianpaul Gitonga's portfolio - Frontend Developer specializing in responsive, user-friendly web interfaces using React, Vue, and modern web technologies.">
+    <title>Brianpaul Gitonga | Frontend Developer Portfolio</title> 
     <link rel="stylesheet" href="styl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
 </head>
 <style>
-    /* General styles */
+ /* Unique Portfolio Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --bg-color: #0a192f;
+    --text-color: #8892b0;
+    --highlight-color: #00ffcc;
+    --secondary-color: #ff6b6b;
+    --card-bg: #112240;
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff; /* Default light mode background */
-    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .wrapper {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-/* Header styles */
-.hero-header {
-    background-color: #007ced; /* Default header background color */
-    color: #fff; /* Default header text color */
-    padding: 20px;
+/* Unique Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background-color: rgba(10, 25, 47, 0.85);
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--highlight-color);
 }
 
-.logo i {
-    margin-right: 10px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navlinks {
-    list-style-type: none;
     display: flex;
-    justify-content: flex-end;
+    list-style: none;
 }
 
 .navlinks li {
-    margin-left: 20px;
+    margin-left: 2rem;
 }
 
-.navlinks li a {
-    color: #fff;
+.navlinks a {
     text-decoration: none;
+    color: var(--text-color);
+    font-weight: 300;
+    position: relative;
+    transition: var(--transition);
 }
 
-.navlinks li a:hover {
-    text-decoration: underline;
+.navlinks a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--highlight-color);
+    transition: var(--transition);
 }
 
-/* Main container styles */
-.container {
+.navlinks a:hover {
+    color: var(--highlight-color);
+}
+
+.navlinks a:hover::after {
+    width: 100%;
+}
+
+/* Unique Hero Section */
+.hero-header {
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-pic img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 5px solid #fff;
+.hero-header::before {
+    content: '<hero>';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Courier New', monospace;
+    color: var(--highlight-color);
+    opacity: 0.1;
+    font-size: 2rem;
+}
+
+.hero-header::after {
+    content: '</hero>';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Courier New', monospace;
+    color: var(--highlight-color);
+    opacity: 0.1;
+    font-size: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .hero-text {
-    max-width: 600px;
+    z-index: 1;
 }
 
-.btn-group {
-    margin-top: 20px;
+.hero-text h5 {
+    font-size: 1.2rem;
+    color: var(--highlight-color);
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #e6f1ff;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero-text p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 .btn {
     display: inline-block;
-    background-color: #007ced;
-    color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: var(--highlight-color);
     text-decoration: none;
-    margin-right: 10px;
-    border-radius: 5px;
+    border: 2px solid var(--highlight-color);
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
-.btn.active {
-    background-color: #15fa00; /* Active button background color */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight-color);
+    transition: var(--transition);
+    z-index: -1;
 }
 
 .btn:hover {
-    text-decoration: none;
-    background-color: #15fa00; /* Hover button background color */
+    color: var(--bg-color);
+}
+
+.btn:hover::before {
+    left: 0;
 }
 
 .social {
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .social a {
-    color: #fff;
-    margin-right: 10px;
-    font-size: 1.2rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: var(--transition);
 }
 
 .social a:hover {
-    color: #15fa00; /* Social media icon hover color */
+    color: var(--highlight-color);
+    transform: translateY(-3px);
 }
 
-/* Intro section styles */
-.intro-section {
-    background-color: #f0f0f0; /* Default intro section background color */
-    padding: 40px 0;
+.hero-pic {
+    position: relative;
 }
 
-.intro-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.intro-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.intro-content h2 {
-    color: #007ced;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.intro-content p {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.learn-more {
-    color: #007ced;
-    text-decoration: none;
-}
-
-.learn-more:hover {
-    text-decoration: underline;
-}
-
-/* Dark mode styles */
-
-body.dark-mode {
-    background-color: #222; /* Dark mode background */
-    color: #fff; /* Dark mode text color */
-}
-.whatsapp-icon {
-    position: fixed;
+.hero-pic::before {
+    content: '';
+    position: absolute;
+    top: 20px;
     left: 20px;
+    right: 20px;
     bottom: 20px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
+    border: 2px solid var(--highlight-color);
+    z-index: -1;
+}
+
+.hero-pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(100%) contrast(1.2);
+    transition: var(--transition);
+}
+
+.hero-pic:hover img {
+    filter: none;
+}
+
+/* Unique Sections */
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+section::before {
+    content: attr(id);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Courier New', monospace;
+    color: var(--highlight-color);
+    opacity: 0.1;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #e6f1ff;
+    margin-bottom: 2rem;
+}
+
+/* Unique Skills Section */
+.skill-bars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skill {
+    position: relative;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--highlight-color);
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e6f1ff;
+}
+
+.skill-level {
+    font-size: 0.9rem;
+    color: var(--highlight-color);
+}
+
+/* Unique Projects Showcase */
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 255, 218, 0.1);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    color: #e6f1ff;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
-.whatsapp-icon:hover {
-    background-color: #128C7E;
-    color: #fff;
-    transform: scale(1.1);
+.project-tech span {
+    font-size: 0.8rem;
+    color: var(--highlight-color);
+    margin-right: 1rem;
 }
 
-/* Ensure the icon doesn't overlap with content on smaller screens */
-@media screen and (max-width: 768px) {
-    .whatsapp-icon {
-        left: 10px;
-        bottom: 10px;
-        font-size: 24px;
-        width: 50px;
-        height: 50px;
+/* Unique Contact Form */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 4px;
+    color: #e6f1ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--highlight-color);
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Unique Footer */
+footer {
+    background-color: var(--card-bg);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+.hero-text, .skill, .project-card, #contact-form {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-text { animation-delay: 0.2s; }
+.skill:nth-child(1) { animation-delay: 0.4s; }
+.skill:nth-child(2) { animation-delay: 0.6s; }
+.skill:nth-child(3) { animation-delay: 0.8s; }
+.project-card:nth-child(1) { animation-delay: 1s; }
+.project-card:nth-child(2) { animation-delay: 1.2s; }
+.project-card:nth-child(3) { animation-delay: 1.4s; }
+#contact-form { animation-delay: 1.6s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-pic {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .navlinks {
+        display: none;
+    }
+
+    .togglebtn {
+        display: block;
+    }
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: orangered;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--secondary-color);
+}
+.dark-mode {
+  --bg-color: #ff0000;
+  --text-color: #000000;
+  --card-bg: #7d8086;
+  --border-color: #2c3e50;
+}
 </style>
 <body>
-    <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
    <div class="hero-header">
     <div class="wrapper">
         <header>
             <div class="logo">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-code" aria-hidden="true"></i>
                 <div class="logo-text">Gitonga TechHub</div>
             </div>
             <nav>
-                <div class="togglebtn">
+                <button class="togglebtn" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
                 <ul class="navlinks">
                     <li><a href="">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -232,95 +512,193 @@ body.dark-mode {
         </header>
         <div class="container">
             <div class="hero-pic">
-                <img src="image.jpg" alt="profile pic">
+                <img src="image.jpg" alt="Brianpaul Gitonga - Frontend Developer">
             </div>
             <div class="hero-text">
                 <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
-                <h1 style="color:#007ced ;">BrianPaul <span style="color: #15fa00;">Gitonga</span></h1>
-                <p>I specialize in creating responsive, user-friendly web interfaces using modern technologies. Let's collaborate to bring your ideas to life.</p>
+                <h1><span class="name-first">BrianPaul</span> <span class="name-last">Gitonga</span></h1>
+                <p>I'm a passionate frontend developer with expertise in React, Vue, and modern web technologies. I create responsive, user-friendly interfaces that bring ideas to life and enhance user experiences.</p>
                 <div class="btn-group">
-                    <a href="" class="btn ">Hire Me</a>
+                    <a href="#contact-form" class="btn">Hire Me</a>
                     <a href="CV.html" class="btn active">Download CV</a>
                 </div>
                 
                 <div class="social">
-                    <a href="https://www.facebook.com/Paul Brian Gm"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/GitoBrian"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/Catalyst Guru"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/+254110848885" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/in/Brian Paul"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Catalyst254"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/Paul Brian Gm" aria-label="Facebook Profile"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/GitoBrian" aria-label="Twitter Profile"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/Catalyst Guru" aria-label="Instagram Profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/+254110848885" target="_blank" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/Brian Paul" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Catalyst254" aria-label="GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </div>
    </div> 
 
+   <button class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+  
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
+
    <div class="intro-section">
     <div class="wrapper">
         <div class="intro-card">
             <div class="intro-icon">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user" aria-hidden="true"></i>
             </div>
             <div class="intro-content">
                 <h2>About Me</h2>
-                <p>With a passion for technology and a knack for design, I create visually appealing and highly functional websites. <br><a href="about.html" class="learn-more">Learn more<i class="fas fa-arrow-right"></i></a></p>
+                <p>I'm a frontend developer with 5+ years of experience, passionate about creating intuitive and visually appealing web interfaces. My expertise lies in React and Vue.js, coupled with a strong foundation in UI/UX principles. <br><a href="about.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </div>
         <div class="intro-card">
             <div class="intro-icon">
-                <i class="fas fa-tools"></i>
+                <i class="fas fa-tools" aria-hidden="true"></i>
             </div>
             <div class="intro-content">
                 <h2>My Services</h2>
-                <p>I offer web development, web design, photography, and graphic design services to help bring your ideas to life. <br><a href="services.html" class="learn-more">Learn more<i class="fas fa-arrow-right"></i></a></p>
+                <p>I offer a range of services including custom web development, responsive design, performance optimization, and frontend consultancy. Whether you need a new website or want to improve an existing one, I'm here to help. <br><a href="services.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </div>
         <div class="intro-card">
             <div class="intro-icon">
-                <i class="fas fa-briefcase"></i>
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
             </div>
             <div class="intro-content">
                 <h2>Recent Projects</h2>
-                <p>Explore some of my recent projects, showcasing my skills and experience in various aspects of web development. <br><a href="projects.html" class="learn-more">Learn more<i class="fas fa-arrow-right"></i></a></p>
+                <p>From e-commerce platforms to interactive dashboards, my portfolio showcases a diverse range of projects. Each one demonstrates my commitment to clean code, performance, and user-centric design. <br><a href="projects.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </div>
     </div>
-</div>
-
-   <!-- Dark Mode Toggle -->
-   <div class="mode-toggle">
-       <label class="switch">
-           <input type="checkbox" id="darkModeToggle">
-           <span class="slider round"></span>
-       </label>
-       <span class="mode-label">Dark Mode</span>
    </div>
 
-   <!-- Typed.js for typing effect -->
+   <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-bars">
+        <div class="skill">
+            <div class="skill-name">HTML5/CSS3</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="95%" style="max-width:95%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">JavaScript (ES6+)</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="90%" style="max-width:90%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">React</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="85%" style="max-width:85%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Vue.js</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="80%" style="max-width:80%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Responsive Design</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="90%" style="max-width:90%"></div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section id="projects-showcase">
+    <h2>Featured Projects</h2>
+    <div class="project-cards">
+        <div class="project-card">
+            <img src="project1.jpg" alt="E-commerce Platform">
+            <h3>TechGear E-commerce</h3>
+            <p>A fully responsive e-commerce platform built with React and Node.js, featuring real-time inventory updates and secure payment integration.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="project2.jpg" alt="Analytics Dashboard">
+            <h3>DataViz Dashboard</h3>
+            <p>An interactive analytics dashboard created with Vue.js and D3.js, providing real-time data visualization for business metrics.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="project3.jpg" alt="Fitness Tracking App">
+            <h3>FitTrack App</h3>
+            <p>A mobile-first web application for fitness tracking, built with React Native and integrating with various health APIs.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </div>
+   </section>
+
+   <section id="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial">
+        <blockquote>"Brianpaul's expertise in frontend development transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to deadlines were impressive."</blockquote>
+        - Sarah Johnson, CEO of TechInnovate
+    </div>
+    <div class="testimonial">
+        <blockquote>"Working with Brianpaul was a pleasure. He not only delivered a beautiful, responsive design but also provided valuable insights to improve our user experience. Highly recommended!"</blockquote>
+        - Michael Chen, Founder of StartUp Hub
+    </div>
+   </section>
+
+   <section id="contact-form">
+    <h2>Get in Touch</h2>
+    <p>Interested in working together? Fill out the form below, and I'll get back to you as soon as possible.</p>
+    <form action="submit-form.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+   </section>
+
+   <footer>
+    <div class="wrapper">
+        <p>&copy; 2024 Brianpaul Gitonga. All rights reserved.</p>
+        <nav>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </nav>
+    </div>
+   </footer>
+
+   <div id="loading" aria-hidden="true">
+    <div class="spinner"></div>
+   </div>
+
+   <!--typed js for typing effect-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
    <script>
-    // Toggle dark mode
-    const darkModeToggle = document.getElementById('darkModeToggle');
-
-    darkModeToggle.addEventListener('change', () => {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
-
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.checked = true;
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
+});
+const toggleBtn = document.querySelector('.togglebtn');
+const navLinks = document.querySelector('.navlinks');
 
-    // Typed.js initialization
-    var typed = new Typed(".input", {
-        strings: ["Frontend Developer", "Web Developer", "Web Designer", "Photographer", "Graphic Designer"],
-        typeSpeed: 70,
-        backSpeed: 55,
-        loop: true
-    });
+toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
    </script>
 </body>
+
 </html>

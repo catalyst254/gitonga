@@ -63,6 +63,19 @@
         </section>
     </div>
 </div>
+<button class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+  
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
         var togglebtn = document.querySelector(".togglebtn");

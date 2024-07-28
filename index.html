@@ -6,6 +6,7 @@
     <title>Brianpaul Gitonga | Portfolio</title> 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
 </head>
 <body>
     <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer">
@@ -46,7 +47,6 @@
                     <a href="" class="btn ">Hire Me</a>
                     <a href="CV.html" class="btn active">Download CV</a>
                 </div>
-                
                 <div class="social">
                     <a href="https://www.facebook.com/Paul Brian Gm"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://twitter.com/GitoBrian"><i class="fab fa-twitter"></i></a>
@@ -91,6 +91,21 @@
         </div>
     </div>
 </div>
+
+<button class="dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+  
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
 
    <!--typed js for typing effect-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>

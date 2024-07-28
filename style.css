@@ -7,12 +7,12 @@
 }
 body{
     overflow-x: hidden;
+    background-color: #0a192f;
 }
 .hero-header{
-width: 100%;
-height: 100%;
-min-height: 100vh;
-background: #222;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
 }
 .wrapper{
     width: 1280px;
@@ -26,10 +26,13 @@ header{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: ;
-    z-index: 999;
+    position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
+    left: 0px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .logo{
@@ -53,7 +56,7 @@ header{
 .logo .logo-text {
     font-weight: 500;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: bold; 
     text-transform: uppercase; 
@@ -85,17 +88,30 @@ nav .navlinks li{
     display: inline-block;
 }
 nav .navlinks li a {
-    color: #e5e5e5;
+    color: #8892b0;
     margin-right: 2.5rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     text-decoration: none; 
     transition: color 0.3s ease; 
 }
 
+.navlinks a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00ffcc;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+nav.navlinks li a:hover::after {
+    width: 100%;
+}
 nav .navlinks li a:hover {
-    color: #15fa00;
-    border-bottom: 1.5px solid #15fa00;
+    color: #00ffcc;
     
 }
 
@@ -104,7 +120,7 @@ nav .navlinks li a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 4rem;
+    margin-top: 150px;
 }
 .container .hero-pic{
     width: 300px;
@@ -132,12 +148,11 @@ nav .navlinks li a:hover {
 }
 
 .hero-text h5{
-    color: #e5e5e5;
-    font-size: 14px;
+    font-size: 30px;
 }
 .hero-text h5 span{
     color: #15fa00;
-    font-size: 16px;
+    font-size: 24px;
     font-family: cursive;
 }
 .hero-text h1{
@@ -158,7 +173,7 @@ nav .navlinks li a:hover {
 .btn-group .btn{
     border-color: #d5d5d5;
     color: #ffff;
-    background-color: #333;
+    background-color: #0a192f;
     padding: 10px 15px;
     margin: 5px 0;
     margin-right: 7px;
@@ -217,18 +232,17 @@ nav .navlinks li a:hover {
     nav .navlinks {
         position: absolute;
         top: 110px;
-        right: -100vw;
         bottom: 0;
-        width: 30%;
-        height: 50%;
-        background-color: #222;
-        z-index: 3;
-        box-shadow: 5px 13px 30px black;
+        width: 40%;
+        height: 250%;
+        background-color: #0a192f;
+        backdrop-filter: blur(10px);
+        box-shadow: inset 5px 5px 20px #00ffcc;
         transition: 0.5s;
         padding: 25px 20px;
-        border: 2px solid #222;
-        border-radius: 10px;
-        overflow: hidden;
+        border: 2px solid #00ffcc;
+        border-radius: 1px;
+
     }
     nav .navlinks li {
         display: block;
@@ -240,6 +254,9 @@ nav .navlinks li a:hover {
     }
     nav .navlinks.open {
         right: 5%;
+    }
+    .intro-section{
+        margin-top: -100px;
     }
 }
 @media (max-width: 768px)
@@ -260,6 +277,12 @@ nav .navlinks li a:hover {
     .navlinks {
         display: none;
     }
+    .container{
+        margin-top: 100px;
+    }
+    .intro-section{
+        margin-top: -100px;
+    }
 
 }
 
@@ -269,9 +292,9 @@ nav .navlinks li a:hover {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin-top: -100px;
+    margin-top:-100px;
     flex-wrap: wrap;
-    background: #222;
+    background: #0a192f;
   }
   
   .intro-card {
@@ -390,4 +413,46 @@ nav .navlinks li a:hover {
         height: 50px;
     }
 }
+  
+/* Dark mode toggle */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: orangered;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: white;
+  }
+  .dark-mode {
+    background-color: #f7f7f7;
+  }
+  .dark-mode p ,.hero-text h5 {
+    color: #000000;
+  }
+  .dark-mode header{
+    background-color: #22222242;
+  }
+  .dark-mode .intro-section{
+    background: #ffffff;
+  }
+  .dark-mode .intro-card{
+    box-shadow: -2px -2px 46px #000000;
+  }
+  .dark-mode .social i{
+    color: #000000;
+  }
+  .dark-mode .logo .logo-text{
+    color: #0a0253;
+  }
+  
   

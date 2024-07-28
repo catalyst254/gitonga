@@ -38,7 +38,7 @@ p{
 }
 
 .contact-info, .contact-form {
-    background: #222; 
+    background: transparent; 
     border-radius: 10px;
     box-shadow: -2px -2px 18px black;
     margin: 20px;
@@ -47,9 +47,7 @@ p{
     text-align: left;
     transition: transform 0.3s ease;
 }
-.contact-info, .contact-form :hover{
-    
-}
+
 
 .contact-info h2, .contact-form h2 {
     margin-top: 0;
@@ -92,6 +90,11 @@ p{
     border-radius: 4px;
     box-sizing: border-box;
     background-color: transparent;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+    outline: none;
+    box-shadow: 0 0 5px #64ffda;
 }
 
 .contact-form button {
