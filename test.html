@@ -3,702 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brianpaul Gitonga's portfolio - Frontend Developer specializing in responsive, user-friendly web interfaces using React, Vue, and modern web technologies.">
-    <title>Brianpaul Gitonga | Frontend Developer Portfolio</title> 
-    <link rel="stylesheet" href="styl.css">
+    <title>Your Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="script.js" defer></script>
-</head>
-<style>
- /* Unique Portfolio Styles */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
-
-:root {
-    --bg-color: #0a192f;
-    --text-color: #8892b0;
-    --highlight-color: #00ffcc;
-    --secondary-color: #ff6b6b;
-    --card-bg: #112240;
-    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    <style>
+ .intro-section {
+    background: #0a192f;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 124, 237, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .wrapper {
-    width: 90%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Unique Header */
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 20px 0;
-    backdrop-filter: blur(10px);
-    transition: var(--transition);
-}
-
-header.scrolled {
-    background-color: rgba(10, 25, 47, 0.85);
-    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--highlight-color);
-}
-
-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.navlinks {
-    display: flex;
-    list-style: none;
-}
-
-.navlinks li {
-    margin-left: 2rem;
-}
-
-.navlinks a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 300;
+    flex-wrap:nowrap;
     position: relative;
-    transition: var(--transition);
-}
-
-.navlinks a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--highlight-color);
-    transition: var(--transition);
-}
-
-.navlinks a:hover {
-    color: var(--highlight-color);
-}
-
-.navlinks a:hover::after {
-    width: 100%;
-}
-
-/* Unique Hero Section */
-.hero-header {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-header::before {
-    content: '<hero>';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-family: 'Courier New', monospace;
-    color: var(--highlight-color);
-    opacity: 0.1;
-    font-size: 2rem;
-}
-
-.hero-header::after {
-    content: '</hero>';
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-family: 'Courier New', monospace;
-    color: var(--highlight-color);
-    opacity: 0.1;
-    font-size: 2rem;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.hero-text {
     z-index: 1;
 }
 
-.hero-text h5 {
-    font-size: 1.2rem;
-    color: var(--highlight-color);
-    margin-bottom: 1rem;
+.intro-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: calc(33.33% - 40px);
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 124, 237, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    max-width: 250px;
+    position: relative;
 }
 
-.hero-text h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    color: #e6f1ff;
-    margin-bottom: 1rem;
-    line-height: 1.1;
+.intro-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.03) 50%);
+    z-index: -1;
+    transition: transform 0.5s ease;
 }
 
-.hero-text p {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+.intro-card:hover::after {
+    transform: scale(1.5);
 }
 
-.btn {
+.intro-icon {
+    font-size: 50px;
+    color: #15fa00;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.intro-card:hover .intro-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.intro-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #007ced;
+    position: relative;
     display: inline-block;
-    padding: 12px 24px;
-    background-color: transparent;
-    color: var(--highlight-color);
+}
+
+.intro-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #15fa00;
+    transition: width 0.3s ease;
+}
+
+.intro-card:hover .intro-content h2::after {
+    width: 100%;
+}
+
+.intro-content p {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.learn-more {
+    color: #007ced;
     text-decoration: none;
-    border: 2px solid var(--highlight-color);
-    border-radius: 4px;
-    font-weight: 600;
-    transition: var(--transition);
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #007ced;
+    border-radius: 30px;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.btn::before {
+.learn-more::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: var(--highlight-color);
-    transition: var(--transition);
+    background-color: #007ced;
+    transition: left 0.3s ease;
     z-index: -1;
 }
 
-.btn:hover {
-    color: var(--bg-color);
+.learn-more:hover {
+    color: #ffffff;
 }
 
-.btn:hover::before {
+.learn-more:hover::before {
     left: 0;
 }
 
-.social {
-    margin-top: 2rem;
+.learn-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
 }
 
-.social a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: var(--transition);
+.learn-more:hover i {
+    transform: translateX(5px);
 }
 
-.social a:hover {
-    color: var(--highlight-color);
-    transform: translateY(-3px);
-}
-
-.hero-pic {
-    position: relative;
-}
-
-.hero-pic::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    border: 2px solid var(--highlight-color);
-    z-index: -1;
-}
-
-.hero-pic img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    filter: grayscale(100%) contrast(1.2);
-    transition: var(--transition);
-}
-
-.hero-pic:hover img {
-    filter: none;
-}
-
-/* Unique Sections */
-section {
-    padding: 100px 0;
-    position: relative;
-}
-
-section::before {
-    content: attr(id);
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-family: 'Courier New', monospace;
-    color: var(--highlight-color);
-    opacity: 0.1;
-    font-size: 2rem;
-}
-
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #e6f1ff;
-    margin-bottom: 2rem;
-}
-
-/* Unique Skills Section */
-.skill-bars {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.skill {
-    position: relative;
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background-color: var(--highlight-color);
-}
-
-.skill-name {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #e6f1ff;
-}
-
-.skill-level {
-    font-size: 0.9rem;
-    color: var(--highlight-color);
-}
-
-/* Unique Projects Showcase */
-.project-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background-color: var(--card-bg);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: var(--transition);
-    position: relative;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(100, 255, 218, 0.1);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-title {
-    font-size: 1.2rem;
-    color: #e6f1ff;
-    margin-bottom: 0.5rem;
-}
-
-.project-description {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.project-tech span {
-    font-size: 0.8rem;
-    color: var(--highlight-color);
-    margin-right: 1rem;
-}
-
-/* Unique Contact Form */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1rem;
-    background-color: var(--card-bg);
-    border: none;
-    border-radius: 4px;
-    color: #e6f1ff;
-    font-family: 'Poppins', sans-serif;
-}
-
-input:focus, textarea:focus {
-    outline: 2px solid var(--highlight-color);
-}
-
-textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Unique Footer */
-footer {
-    background-color: var(--card-bg);
-    padding: 2rem 0;
-    text-align: center;
-}
-
-footer p {
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+@media (max-width: 992px) {
+    .wrapper {
+        flex-wrap: wrap;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .intro-card {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
     }
 }
 
-.hero-text, .skill, .project-card, #contact-form {
-    animation: fadeUp 0.6s ease-out forwards;
-    opacity: 0;
-}
-
-.hero-text { animation-delay: 0.2s; }
-.skill:nth-child(1) { animation-delay: 0.4s; }
-.skill:nth-child(2) { animation-delay: 0.6s; }
-.skill:nth-child(3) { animation-delay: 0.8s; }
-.project-card:nth-child(1) { animation-delay: 1s; }
-.project-card:nth-child(2) { animation-delay: 1.2s; }
-.project-card:nth-child(3) { animation-delay: 1.4s; }
-#contact-form { animation-delay: 1.6s; }
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-pic {
-        order: -1;
-        margin-bottom: 2rem;
-    }
-
-    .hero-text h1 {
-        font-size: 3rem;
-    }
-
-    .navlinks {
-        display: none;
-    }
-
-    .togglebtn {
-        display: block;
+    .intro-card {
+        flex-basis: 100%;
+        max-width: none;
     }
 }
-
-/* Dark mode toggle */
-.dark-mode-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: orangered;
-  color: #000000;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.dark-mode-toggle:hover {
-  background-color: var(--secondary-color);
-}
-.dark-mode {
-  --bg-color: #ff0000;
-  --text-color: #000000;
-  --card-bg: #7d8086;
-  --border-color: #2c3e50;
-}
-</style>
+    </style>
+</head>
 <body>
-    <a href="https://wa.me/254110848885" class="whatsapp-icon" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-   <div class="hero-header">
-    <div class="wrapper">
-        <header>
-            <div class="logo">
-                <i class="fas fa-code" aria-hidden="true"></i>
-                <div class="logo-text">Gitonga TechHub</div>
-            </div>
-            <nav>
-                <button class="togglebtn" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="navlinks">
-                    <li><a href="">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul> 
-            </nav>
-        </header>
-        <div class="container">
-            <div class="hero-pic">
-                <img src="image.jpg" alt="Brianpaul Gitonga - Frontend Developer">
-            </div>
-            <div class="hero-text">
-                <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
-                <h1><span class="name-first">BrianPaul</span> <span class="name-last">Gitonga</span></h1>
-                <p>I'm a passionate frontend developer with expertise in React, Vue, and modern web technologies. I create responsive, user-friendly interfaces that bring ideas to life and enhance user experiences.</p>
-                <div class="btn-group">
-                    <a href="#contact-form" class="btn">Hire Me</a>
-                    <a href="CV.html" class="btn active">Download CV</a>
+    <div class="intro-section">
+        <div class="wrapper">
+            <div class="intro-card" data-tilt>
+                <div class="intro-icon">
+                    <i class="fas fa-user"></i>
                 </div>
-                
-                <div class="social">
-                    <a href="https://www.facebook.com/Paul Brian Gm" aria-label="Facebook Profile"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/GitoBrian" aria-label="Twitter Profile"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/Catalyst Guru" aria-label="Instagram Profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/+254110848885" target="_blank" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/Brian Paul" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="https://github.com/Catalyst254" aria-label="GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <div class="intro-content">
+                    <h2>About Me</h2>
+                    <p>Passionate technologist and design enthusiast crafting captivating, high-performance websites.</p>
+                    <a href="about.html" class="learn-more">Discover<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="intro-card" data-tilt>
+                <div class="intro-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="intro-content">
+                    <h2>My Services</h2>
+                    <p>Offering web development, design, photography, and graphic design to bring your vision to reality.</p>
+                    <a href="services.html" class="learn-more">Explore<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="intro-card" data-tilt>
+                <div class="intro-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="intro-content">
+                    <h2>Recent Projects</h2>
+                    <p>Browse my latest works showcasing expertise in various web development and design domains.</p>
+                    <a href="projects.html" class="learn-more">View Gallery<i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
-   </div> 
-
-   <button class="dark-mode-toggle" id="darkModeToggle">
-    <i class="fas fa-moon"></i>
-  </button>
-
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-  
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDarkMode = body.classList.contains('dark-mode');
-      darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
-  </script>
-
-   <div class="intro-section">
-    <div class="wrapper">
-        <div class="intro-card">
-            <div class="intro-icon">
-                <i class="fas fa-user" aria-hidden="true"></i>
-            </div>
-            <div class="intro-content">
-                <h2>About Me</h2>
-                <p>I'm a frontend developer with 5+ years of experience, passionate about creating intuitive and visually appealing web interfaces. My expertise lies in React and Vue.js, coupled with a strong foundation in UI/UX principles. <br><a href="about.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
-            </div>
-        </div>
-        <div class="intro-card">
-            <div class="intro-icon">
-                <i class="fas fa-tools" aria-hidden="true"></i>
-            </div>
-            <div class="intro-content">
-                <h2>My Services</h2>
-                <p>I offer a range of services including custom web development, responsive design, performance optimization, and frontend consultancy. Whether you need a new website or want to improve an existing one, I'm here to help. <br><a href="services.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
-            </div>
-        </div>
-        <div class="intro-card">
-            <div class="intro-icon">
-                <i class="fas fa-briefcase" aria-hidden="true"></i>
-            </div>
-            <div class="intro-content">
-                <h2>Recent Projects</h2>
-                <p>From e-commerce platforms to interactive dashboards, my portfolio showcases a diverse range of projects. Each one demonstrates my commitment to clean code, performance, and user-centric design. <br><a href="projects.html" class="learn-more">Learn more<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
-            </div>
-        </div>
-    </div>
-   </div>
-
-   <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skill-bars">
-        <div class="skill">
-            <div class="skill-name">HTML5/CSS3</div>
-            <div class="skill-bar">
-                <div class="skill-per" per="95%" style="max-width:95%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="skill-name">JavaScript (ES6+)</div>
-            <div class="skill-bar">
-                <div class="skill-per" per="90%" style="max-width:90%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="skill-name">React</div>
-            <div class="skill-bar">
-                <div class="skill-per" per="85%" style="max-width:85%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="skill-name">Vue.js</div>
-            <div class="skill-bar">
-                <div class="skill-per" per="80%" style="max-width:80%"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="skill-name">Responsive Design</div>
-            <div class="skill-bar">
-                <div class="skill-per" per="90%" style="max-width:90%"></div>
-            </div>
-        </div>
-    </div>
-   </section>
-
-   <section id="projects-showcase">
-    <h2>Featured Projects</h2>
-    <div class="project-cards">
-        <div class="project-card">
-            <img src="project1.jpg" alt="E-commerce Platform">
-            <h3>TechGear E-commerce</h3>
-            <p>A fully responsive e-commerce platform built with React and Node.js, featuring real-time inventory updates and secure payment integration.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="project2.jpg" alt="Analytics Dashboard">
-            <h3>DataViz Dashboard</h3>
-            <p>An interactive analytics dashboard created with Vue.js and D3.js, providing real-time data visualization for business metrics.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-        <div class="project-card">
-            <img src="project3.jpg" alt="Fitness Tracking App">
-            <h3>FitTrack App</h3>
-            <p>A mobile-first web application for fitness tracking, built with React Native and integrating with various health APIs.</p>
-            <a href="#" class="btn">View Project</a>
-        </div>
-    </div>
-   </section>
-
-   <section id="testimonials">
-    <h2>What Clients Say</h2>
-    <div class="testimonial">
-        <blockquote>"Brianpaul's expertise in frontend development transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to deadlines were impressive."</blockquote>
-        - Sarah Johnson, CEO of TechInnovate
-    </div>
-    <div class="testimonial">
-        <blockquote>"Working with Brianpaul was a pleasure. He not only delivered a beautiful, responsive design but also provided valuable insights to improve our user experience. Highly recommended!"</blockquote>
-        - Michael Chen, Founder of StartUp Hub
-    </div>
-   </section>
-
-   <section id="contact-form">
-    <h2>Get in Touch</h2>
-    <p>Interested in working together? Fill out the form below, and I'll get back to you as soon as possible.</p>
-    <form action="submit-form.php" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-   </section>
-
-   <footer>
-    <div class="wrapper">
-        <p>&copy; 2024 Brianpaul Gitonga. All rights reserved.</p>
-        <nav>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
-        </nav>
-    </div>
-   </footer>
-
-   <div id="loading" aria-hidden="true">
-    <div class="spinner"></div>
-   </div>
-
-   <!--typed js for typing effect-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-   <script>
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-const toggleBtn = document.querySelector('.togglebtn');
-const navLinks = document.querySelector('.navlinks');
-
-toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-   </script>
 </body>
-
 </html>
